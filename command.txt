@@ -1,0 +1,14 @@
+docker run -d --name my-nginx -p 8090:80 -v C:\nginx101\conf\nginx.conf:/etc/nginx/nginx.conf nginx
+
+docker restart my-nginx
+
+docker run -d --name my-api-1 -p 3001:3000 -v C:\nginx101\db\db1.json:/usr/app/db.json imsuriyapi/json-server
+
+#run api server db2.json
+docker run -d --name my-api-2 -p 3002:3000 -v C:\nginx101\db\db2.json:/usr/app/db.json imsuriyapi/json-server
+
+#run api server db3.json
+docker run -d --name my-api-3 -p 3003:3000 -v C:\nginx101\db\db3.json:/usr/app/db.json imsuriyapi/json-server
+
+#run api server db4.json
+docker run -d --name my-api-4 -p 3004:3000 -v C:\nginx101\db\db4.json:/usr/app/db.json imsuriyapi/json-server
